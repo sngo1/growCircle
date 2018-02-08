@@ -41,16 +41,16 @@ var animate = function(){
     console.log("Radius: ", radius);
     drawCircle();
 
-    if (radius == 200){
+    if (radius >= 200){
 	grow = false;
-    } else if(radius == 5){
+    } else if(radius <= 5){
 	grow = true;
     }
     
     if (grow){
-	radius += 5;
+	radius += 3;
     } else {
-	radius -= 5;
+	radius -= 2;
     } 
 	
     requestID = window.requestAnimationFrame(animate);
