@@ -31,10 +31,7 @@ var drawCircle = function(){
     return true
 }
 
-var stop = function(){
-    window.cancelAnimationFrame(requestID);
-    return true;
-}
+
 
 var animate = function(){
     clearCanvas();
@@ -58,53 +55,11 @@ var animate = function(){
     return true;
 }
 
-/*
-var direction = "right";
-
-// Based on the global state variable, decide whether to draw a circle or a
-// square, connect the new point to the last point, and then draw the shape.
-var animate = function(){
-    clearCanvas();
-    drawCircle(lastX, lastY);
-   
-    if (direction == "right"){
-	console.log("Heading ", direction);
-	if (lastX < 550){
-	    lastX += 5
-	} else {
-	    direction = "down";
-	}
-    } else if (direction == "down"){
-	console.log("Heading ", direction);
-	if (lastY < 550){
-	    lastY += 5;
-	} else {
-	    direction = "left";
-	}
-    } else if (direction == "left"){
-	console.log("Heading ", direction);
-	if (lastX > 50){
-	    lastX -= 5;
-	} else {
-	    direction = "up";
-	}
-    } else if (direction == "up"){
-	console.log("Heading ", direction);
-	if (lastY > 50){
-	    lastY -= 5;
-	} else {
-	    direction = "right";
-	}
-    } else {
-	stop();
-	console.log("Animation finished.");
-    }
-
-    requestID = window.requestAnimationFrame(animate);
-    console.log("REQID# ", requestID);
+var stopFunc = function(e){
+    console.log("Cancel ID: ", requestID);
+    window.cancelAnimationFrame(requestID);
     return true;
 }
-*/
 
 // Draw a white rectangle over the canvas to clear it.
 var clearCanvas = function(){
@@ -120,7 +75,7 @@ canvas.addEventListener('click', animate);
 
 var stop = document.getElementById("stop");
 console.log("stop: ", stop);
-stop.addEventListener('click', stop);
+stop.addEventListener('click', stopFunc);
 var start = document.getElementById("start");
 console.log("start: ", start);
 start.addEventListener('click', animate);
