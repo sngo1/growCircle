@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- Samantha Ngo | Workshop 3 | Softdev - pd7 -->
+<html>
+  <head>
+    <title>
+    </title>
+    <style>
+      #slate {border: 3px solid black}
+    </style>
+    <h1> Animation </h1>
+    <button id="start"> I'm an Animaniac!</button><br><br>
+    <button id="stop"> STOP</button><br><br>
+  </head>
+  <body>
+    <canvas height="600" width="600" id="slate">
+
+    POPCORN is great. This is not loading in your browser. I really want popcorn.
+
+    </canvas>
+    <script src="grow.js"></script>
+  </body>
+</html>
